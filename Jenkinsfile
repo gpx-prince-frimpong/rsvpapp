@@ -1,9 +1,8 @@
 pipeline {
-    agent {
-      kubernetes  {
-            label 'jenkins-slave'
-             defaultContainer 'jnlp'
-      yaml """
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
 apiVersion: v1
 kind: Pod
 spec:
