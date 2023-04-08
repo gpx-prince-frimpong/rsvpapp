@@ -29,7 +29,7 @@ spec:
         }
     }
   environment {
-      IMAGE_REPO = "<gpx-prince-frimpong>/rsvp"
+      IMAGE_REPO = "frimps/rsvp"
       // Instead of DOCKERHUB_USER, use your Dockerhub name
   }
   stages {
@@ -49,7 +49,7 @@ spec:
     }
     stage('Deploy') {
       environment {
-        GIT_CREDS = credentials('github')
+        GIT_CREDS = credentials('payex git')
         HELM_GIT_REPO_URL = "github.com/gpx-prince-frimpong/rsvpapp-helm-cicd.git"
         GIT_REPO_EMAIL = 'prince.frimpong@globalpayex.com'
         GIT_REPO_BRANCH = "master"
